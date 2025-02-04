@@ -1,0 +1,4 @@
+scapy
+tensorflow
+requests
+prometheus_client

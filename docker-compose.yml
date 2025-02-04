@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  tf_model_serving:
+    image: tensorflow/serving
+    container_name: tf_model_serving
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./firewall_model:/models/firewall_model
+    environment:
+      - MODEL_NAME=firewall_model
+      
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+
+  firewall:
+    build:
+      context: .
+    container_name: firewall
+    command: python3 /app/firewall.py
+    volumes:
+      - ./Scripts:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
+
