@@ -57,6 +57,21 @@ Si el firewall bloquea tráfico legítimo por error, puedes eliminar todas las r
 sudo iptables -F
 ```
 Esto restablecerá todas las reglas de iptables, permitiendo el tráfico sin restricciones.
+## 🐳 Gestión de Contenedores Docker
+### 🔄 Detener y eliminar todos los contenedores
+
+Si deseas detener y eliminar todos los contenedores de este proyecto, ejecuta:
+```bash
+docker-compose down
+```
+
+### 🚨 Eliminar imágenes y volúmenes
+
+Si además quieres borrar todas las imágenes y volúmenes, usa:
+```bash
+docker system prune -a -f
+docker volume prune -f
+```
 
 ## 📜 Licencia  
 Este proyecto está bajo la licencia **MIT**, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.  
