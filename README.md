@@ -16,8 +16,8 @@ Este proyecto implementa un **firewall inteligente** basado en **IA y machine le
 
 ### 1️⃣ Clonar el repositorio  
 ```bash
-git clone https://github.com/tu-usuario/firewall-inteligente.git
-cd firewall-inteligente
+git clone https://github.com/MiguelVeloza/FirewallWithIA.git
+cd FirewallWithIA
 ```
 
 ### 2️⃣ Construir y levantar los contenedores  
