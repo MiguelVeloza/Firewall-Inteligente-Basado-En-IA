@@ -65,14 +65,6 @@ Si deseas detener y eliminar todos los contenedores de este proyecto, ejecuta:
 docker-compose down
 ```
 
-### 🚨 Eliminar imágenes y volúmenes
-
-Si además quieres borrar todas las imágenes y volúmenes, usa:
-```bash
-docker system prune -a -f
-docker volume prune -f
-```
-
 ## 📜 Licencia  
 Este proyecto está bajo la licencia **MIT**, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.  
 
